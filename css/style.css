@@ -56,6 +56,7 @@ body {
   line-height: 1.25;
   color: #333;
   font-family: "Noto Sans KR", sans-serif;
+  height: 2000px;
 }
 /* 공통요소 */
 .swiper-container {
@@ -321,9 +322,8 @@ body {
   opacity: 0;
   /* top: 50px; */
   transition: all 0.3s;
-
 }
-.submenu_focus{
+.submenu_focus {
   visibility: visible;
   opacity: 1;
   /* top: 65px; */
@@ -431,16 +431,15 @@ body {
 .search-bt {
   display: block;
   font-size: 2.4rem;
+  line-height: 24px;
   color: #333;
   font-weight: bold;
   width: 24px;
-  height: 24px;
+
   margin-bottom: 3px;
   background-color: #ec008c;
 }
-.search-bt i {
-  /* vertical-align: 5px; */
-}
+
 /* 서브메뉴에 호버했을때 바탕화면 */
 .header-dim {
   display: none;
@@ -452,3 +451,27 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 99999;
 }
+
+/* 상단 스크롤시 class추가 */
+
+.h-fix {
+  position: fixed;
+  top: -141px;
+  left: 0;
+  width: 100%;
+}
+
+.h-show {
+  display: block;
+  width: 20%;
+  text-align: center;
+}
+
+.h-show img {
+  width: 70%;
+}
+
+.h-fix-gnb {
+  width: 80%;
+}
+
