@@ -124,8 +124,6 @@ $(document).ready(function () {
       type: "fraction",
     },
   });
-
-  
   $(".sw-notice-pause").click(function () {
     // swiper 가 중첩되어져서 처리를 함.
     for (var i = 0; i < sw_notice.length; i++) {
@@ -141,7 +139,6 @@ $(document).ready(function () {
     }
     // sw_notice.autoplay.start();
   });
-  
   // 공지사항 목록 관련
   const noticeA = $(".notice-menu > li");
   $.each(noticeA, function (index, item) {
@@ -166,6 +163,45 @@ $(document).ready(function () {
     noticeLi.hide();
     noticeLi.eq(_index).show();
   }
-
+  // sw-edu swiper
+  const sw_edu = new Swiper(".sw-edu", {
+    autoplay: {
+      delay: 2000,
+      // 사용자가 터치드래그 하고 난 후 자동 실행
+      disableOnInteraction: false,
+    },
+    loop: true,
+    nested: true,
+    navigation: {
+      nextEl: ".sw-edu-next",
+      prevEl: ".sw-edu-prev",
+    },
+    pagination: {
+      el: ".sw-edu-pg",
+      type: "fraction",
+    },
+  });
+  // 알림 탭메뉴
+  const alramA = $(".alram-tab-menu a");
+  const alramCont = $(".alram-tab-cont");
+  $.each(alramA, function (index, item) {
+    $(this).click(function (e) {
+      e.preventDefault();
+      alramCont.removeClass("alram-tab-cont-focus")
+      alramCont.eq(index).addClass("alram-tab-cont-focus")
+      alramA.removeClass("alram-tab-menu-focus")
+      alramA.eq(index).addClass("alram-tab-menu-focus")
+    });
+  });
+  // hub 메뉴 기능
+  const hubMenus = $(".hub-menu a")
+  const hubInfos = $(".hub-info > li")
+  $.each(hubMenus , function(index, item){
+    console.log(this);
+     $(this).mouseenter(function(){
+      hubInfos.removeClass("hub-info-focus")
+      hubInfos.eq(index).addClass("hub-info-focus")
+     })
+  })
   // ====================================
 });
