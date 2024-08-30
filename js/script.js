@@ -187,21 +187,79 @@ $(document).ready(function () {
   $.each(alramA, function (index, item) {
     $(this).click(function (e) {
       e.preventDefault();
-      alramCont.removeClass("alram-tab-cont-focus")
-      alramCont.eq(index).addClass("alram-tab-cont-focus")
-      alramA.removeClass("alram-tab-menu-focus")
-      alramA.eq(index).addClass("alram-tab-menu-focus")
+      alramCont.removeClass("alram-tab-cont-focus");
+      alramCont.eq(index).addClass("alram-tab-cont-focus");
+      alramA.removeClass("alram-tab-menu-focus");
+      alramA.eq(index).addClass("alram-tab-menu-focus");
     });
   });
   // hub 메뉴 기능
-  const hubMenus = $(".hub-menu a")
-  const hubInfos = $(".hub-info > li")
-  $.each(hubMenus , function(index, item){
+  const hubMenus = $(".hub-menu a");
+  const hubInfos = $(".hub-info > li");
+  $.each(hubMenus, function (index, item) {
     console.log(this);
-     $(this).mouseenter(function(){
-      hubInfos.removeClass("hub-info-focus")
-      hubInfos.eq(index).addClass("hub-info-focus")
-     })
-  })
+    $(this).mouseenter(function () {
+      hubInfos.removeClass("hub-info-focus");
+      hubInfos.eq(index).addClass("hub-info-focus");
+    });
+  });
+  // sns 기능
+  const snsCate = $(".sns-cate li a");
+  const snsCont = $(".sns-cont");
+  snsCont.eq(0).show();
+  $.each(snsCate, function (index, item) {
+    $(this).click(function (e) {
+      e.preventDefault();
+      // 5번째 버튼은 임시로 처리한다.
+      if (index == 4) {
+        return;
+      }
+
+      snsCate.removeAttr("class");
+      snsCate.eq(3).addClass("i-naver");
+      snsCont.hide();
+      if (index == 0) {
+        $(this).addClass("icon-focus-fb");
+        snsCont.eq(0).show();
+      } else if (index == 1) {
+        $(this).addClass("icon-focus-is");
+        snsCont.eq(1).show();
+      } else if (index == 2) {
+        $(this).addClass("icon-focus-is");
+        snsCont.eq(2).show();
+      } else if (index == 3) {
+        $(this).addClass("icon-focus-nv");
+        snsCont.eq(3).show();
+      }
+    });
+  });
+
+  // news-room
+  const newsCate = $(".news-cate li a");
+  let newsFocusNum = 0;
+  const newsCont = $(".news-cont");
+  newsCont.eq(newsFocusNum).show();
+  $.each(newsCate, function (index, item) {
+    $(this).click(function (e) {
+      e.preventDefault();
+      // 일단 모두 제거한다.
+      newsCate.removeClass("news-focus");
+      newsCate.eq(index).addClass("news-focus");
+      newsCont.hide();
+      newsFocusNum = index
+      newsCont.eq(newsFocusNum).show();
+    });
+    $(this).mouseenter(function(){
+      $(this).addClass("news-focus")
+    })
+    $(this).mouseleave(function(){
+      if(newsFocusNum == index){
+        return
+      } //포커스 처리한 부분을 리무클래스해도 계속 포커스되도록 함
+      $(this).removeClass("news-focus")
+    })
+    
+  });
+
   // ====================================
 });
