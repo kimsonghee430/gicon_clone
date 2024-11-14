@@ -4,7 +4,7 @@
   position: relative;
   display: block;
   margin-bottom: 50px;
-  background-color: rgb(221, 250, 215);
+  /* background-color: rgb(221, 250, 215); */
 }
 .content .pagew {
   width: 1420px;
@@ -47,7 +47,7 @@
   bottom: 10px;
   display: block;
   z-index: 99;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }
 .circle {
   position: relative;

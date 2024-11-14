@@ -329,11 +329,11 @@ body {
 }
 .header-bottom .pagew {
   height: 65px;
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 .logo-gnb {
   position: absolute;
-  top: 16px;
+  top: 10px;
   left: 0;
   display: none;
 }
@@ -386,7 +386,7 @@ body {
 }
 /* depth메뉴 */
 .submenu {
-  background-color: aqua;
+  background-color: white;
   position: absolute;
   top: 65px;
   left: 50%;
@@ -524,7 +524,7 @@ body {
   width: 24px;
 
   margin-bottom: 3px;
-  background-color: #ec008c;
+  /* background-color: #ec008c; */
 }
 
 /* 서브메뉴에 호버했을때 바탕화면 */
